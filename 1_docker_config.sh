@@ -1,7 +1,11 @@
-docker pull metagpt/metagpt:v0.3.1
+#!/bin/bash
 
+VERSION=latest
+OPT_DIR_NAME=opt_$VERSION
 WDIR=.
-mkdir -p $WDIR/opt/metagpt/{config,workspace}
-docker run --rm metagpt/metagpt:v0.3.1 cat /app/metagpt/config/config.yaml > $WDIR/opt/metagpt/config/key.yaml
 
-code $WDIR/opt/metagpt/config/key.yaml # Change the config
+docker pull metagpt/metagpt:$VERSION
+mkdir -p $WDIR/$OPT_DIR_NAME/metagpt/{config,workspace}
+docker run --rm metagpt/metagpt:$VERSION cat /app/metagpt/config/config.yaml > $WDIR/$OPT_DIR_NAME/metagpt/config/key.yaml
+
+code $WDIR/$OPT_DIR_NAME/metagpt/config/key.yaml # Change the config
