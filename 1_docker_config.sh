@@ -6,6 +6,6 @@ WDIR=.
 
 docker pull metagpt/metagpt:$VERSION
 mkdir -p $WDIR/$OPT_DIR_NAME/metagpt/{config,workspace}
-docker run --rm metagpt/metagpt:$VERSION cat /app/metagpt/config/config.yaml > $WDIR/$OPT_DIR_NAME/metagpt/config/key.yaml
+docker run --rm metagpt/metagpt:$VERSION cat /app/metagpt/config/config2.yaml > $WDIR/$OPT_DIR_NAME/metagpt/config/config2.yaml
 
-code $WDIR/$OPT_DIR_NAME/metagpt/config/key.yaml # Change the config
+code $WDIR/$OPT_DIR_NAME/metagpt/config/config2.yaml # Change the config
